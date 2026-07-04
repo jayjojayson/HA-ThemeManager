@@ -16,10 +16,6 @@ Eine Custom Integration, die eine Sammlung hochwertiger Themes als YAML-Dateien 
 
 Wenn dir diese Integration gefällt und du meine Arbeit unterstützen möchtest:
 
-<a href="https://www.buymeacoffee.com/jayjojayson" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="50">
-</a>
-&nbsp;
 <a href="https://ko-fi.com/jayjojayson" target="_blank">
   <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Ko-Fi" height="50">
 </a>
