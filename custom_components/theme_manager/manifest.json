@@ -1,13 +1,13 @@
 {
-  "domain": "theme_manager",
-  "name": "Theme Manager",
   "codeowners": ["@jayjojayson"],
   "config_flow": true,
   "dependencies": ["frontend"],
   "documentation": "https://github.com/jayjojayson/HA-theme-manager",
-  "issue_tracker": "https://github.com/jayjojayson/HA-ThemeManager/issues",
-  "integration_type": "hub",
+  "domain": "theme_manager",
   "iot_class": "local_polling",
+  "integration_type": "hub",
+  "issue_tracker": "https://github.com/jayjojayson/HA-ThemeManager/issues",
+  "name": "Theme Manager",
   "requirements": [],
   "version": "1.5.0"
 }
