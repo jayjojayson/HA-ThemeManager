@@ -1,13 +1,13 @@
 {
-  "domain": "theme_manager",
-  "name": "Theme Manager",
-  "codeowners": ["@jayjojayson"],
-  "config_flow": true,
-  "dependencies": ["frontend"],
-  "documentation": "https://github.com/jayjojayson/HA-theme-manager",
-  "issue_tracker": "https://github.com/jayjojayson/HA-ThemeManager/issues",
-  "iot_class": "local_polling",
-  "integration_type": "hub",
-  "requirements": [],
-  "version": "1.5.0"
+    "domain": "theme_manager",
+    "name": "Theme Manager",
+    "codeowners": ["@jayjojayson"],
+    "config_flow": true,
+    "dependencies": ["frontend"],
+    "documentation": "https://github.com/jayjojayson/HA-theme-manager",
+    "integration_type": "hub",
+    "iot_class": "local_polling",
+    "issue_tracker": "https://github.com/jayjojayson/HA-ThemeManager/issues",
+    "requirements": [],
+    "version": "1.5.0"
 }
