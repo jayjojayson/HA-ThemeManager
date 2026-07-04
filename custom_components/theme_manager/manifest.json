@@ -9,9 +9,5 @@
   "integration_type": "hub",
   "iot_class": "local_polling",
   "requirements": [],
-  "version": "1.5.0",
-  "hacs": {
-    "category": "integration"
-  }
+  "version": "1.5.0"
 }
-
