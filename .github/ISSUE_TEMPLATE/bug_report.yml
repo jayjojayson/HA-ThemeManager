@@ -1,0 +1,61 @@
+name: Bug Report
+description: Report a bug with Theme Manager
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please fill out the form below as completely as possible.
+
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant Version
+      description: Which version of Home Assistant are you running?
+      placeholder: e.g. 2024.6.0
+    validations:
+      required: true
+
+  - type: input
+    id: integration_version
+    attributes:
+      label: Theme Manager Version
+      description: Which version of Theme Manager are you using?
+      placeholder: e.g. 1.5.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output from Home Assistant.
+      render: shell

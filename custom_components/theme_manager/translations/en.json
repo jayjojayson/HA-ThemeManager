@@ -1,0 +1,33 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Theme Manager Setup",
+        "description": "Installs the Theme Manager. Preset themes are copied to /config/themes/ and configuration.yaml is updated automatically.\n\nAfter installation you can pick a theme under **My Account → Appearance → Theme**."
+      }
+    },
+    "abort": {
+      "already_configured": "Theme Manager is already installed."
+    }
+  },
+  "services": {
+    "apply_theme": {
+      "name": "Apply Theme",
+      "description": "Sets the global default theme for this HA instance.",
+      "fields": {
+        "theme_name": {
+          "name": "Theme Name",
+          "description": "Name of the theme as defined in the YAML file (e.g. 'Modern Dark', 'Dracula'). Use 'default' to reset."
+        }
+      }
+    },
+    "reload_themes": {
+      "name": "Reload Themes",
+      "description": "Reloads all themes from /config/themes/ so newly added files are detected immediately."
+    },
+    "list_themes": {
+      "name": "List Themes",
+      "description": "Logs all available theme names from /config/themes/ to the Home Assistant log."
+    }
+  }
+}
