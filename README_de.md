@@ -40,6 +40,12 @@ Wenn dir diese Integration gefällt und du meine Arbeit unterstützen möchtest:
 
 ### Via HACS (empfohlen)
 
+Nutze den Link für die Installtion
+
+ [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=jayjojayson&repository=HA-ThemeManager&category=integration)
+
+ oder
+
 1. HACS öffnen → **Integrationen** → Drei-Punkte-Menü → **Benutzerdefinierte Repositories**
 2. URL `https://github.com/jayjojayson/HA-ThemeManager` eingeben, Kategorie **Integration** wählen → **Hinzufügen**
 3. Integration **Theme Manager** suchen und installieren
