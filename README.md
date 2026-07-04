@@ -1,19 +1,20 @@
-# Theme Manager für Home Assistant
+# Theme Manager for Home Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
 [![Validate with hassfest](https://github.com/jayjojayson/HA-ThemeManager/actions/workflows/hassfest.yaml/badge.svg)](https://github.com/jayjojayson/HA-ThemeManager/actions/workflows/hassfest.yaml)
 [![Validate with HACS](https://github.com/jayjojayson/HA-ThemeManager/actions/workflows/validate.yaml/badge.svg)](https://github.com/jayjojayson/HA-ThemeManager/actions/workflows/validate.yaml)
 [![GitHub Release](https://img.shields.io/github/release/jayjojayson/HA-ThemeManager.svg?style=flat-square)](https://github.com/jayjojayson/HA-ThemeManager/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/jayjojayson/HA-theme-manager?style=flat-square)](https://github.com/jayjojayson/HA-theme-manager/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/jayjojayson/HA-ThemeManager?style=flat-square)](https://github.com/jayjojayson/HA-ThemeManager/stargazers)
+[![Deutsch lesen](https://img.shields.io/badge/Deutsch-README-blue.svg)](README_de.md)
 
-Eine Custom Integration, die eine Sammlung hochwertiger Themes als YAML-Dateien in `/config/themes/` bereitstellt. Die Theme-Auswahl erfolgt direkt im HA-Benutzerprofil – kein Dashboard-Card, kein Lovelace-Setup nötig.
+A custom integration that provides a collection of high-quality themes as YAML files in `/config/themes/`. Themes are selected directly from the HA user profile – no dashboard card, no Lovelace setup required.
 
 ---
 
 ## Support
 
-Wenn dir diese Integration gefällt und du meine Arbeit unterstützen möchtest:
+If you like this integration and want to support my work:
 
 <a href="https://www.buymeacoffee.com/jayjojayson" target="_blank">
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="50">
@@ -25,86 +26,87 @@ Wenn dir diese Integration gefällt und du meine Arbeit unterstützen möchtest:
 
 ---
 
-## Funktionsweise
+## How it works
 
-1. Integration installieren & HA neu starten
-2. Theme-Dateien erscheinen automatisch in `/config/themes/`
-3. Theme auswählen unter **Mein Konto → Erscheinungsbild → Design**
+1. Install the integration & restart HA
+2. Theme files appear automatically in `/config/themes/`
+3. Select a theme under **Profile → Appearance → Theme**
 
-> **Wichtig:** Damit die Themes sichtbar werden, muss im Profil das Design auf **„Automatisch"** oder **„Backend-Auswahl"** gestellt sein – nicht auf ein fest gewähltes Theme.
+> **Important:** For the themes to appear, the profile theme must be set to **"Automatic"** or **"Backend-selected"** – not to a fixed theme.
 
 ---
 
 ## Installation
 
-### Via HACS (empfohlen)
+### Via HACS (recommended)
 
-1. HACS öffnen → **Integrationen** → Drei-Punkte-Menü → **Benutzerdefinierte Repositories**
-2. URL `https://github.com/jayjojayson/HA-theme-manager` eingeben, Kategorie **Integration** wählen → **Hinzufügen**
-3. Integration **Theme Manager** suchen und installieren
-4. Home Assistant neu starten
+1. Open HACS → **Integrations** → three-dot menu → **Custom repositories**
+2. Enter URL `https://github.com/jayjojayson/HA-ThemeManager`, choose category **Integration** → **Add**
+3. Search for and install **Theme Manager**
+4. Restart Home Assistant
 
-### Manuell
+### Manual installation
 
 ```bash
 cp -r custom_components/theme_manager /config/custom_components/theme_manager
 ```
 
-### Integration aktivieren
+### Activate the integration
 
-**Einstellungen → Geräte & Dienste → Integration hinzufügen → „Theme Manager"**
+**Settings → Devices & Services → Add Integration → "Theme Manager"**
 
-Die Preset-Themes werden automatisch nach `/config/themes/` geschrieben und `frontend.reload_themes` wird aufgerufen.
+The preset themes are automatically written to `/config/themes/` and `frontend.reload_themes` is called.
 
-Die Integration fügt automatisch folgenden Block in `configuration.yaml` ein – falls noch nicht vorhanden:
+The integration adds the following block to `configuration.yaml` automatically if it is not already present:
 
 ```yaml
 frontend:
   themes: !include_dir_merge_named themes
 ```
 
-### Theme auswählen
+### Select a theme
 
-**Mein Konto → Erscheinungsbild → Design** → gewünschtes Theme wählen → sofort aktiv.
+**Profile → Appearance → Theme** → choose the theme you want → active immediately.
 
 ---
 
-## Vordefinierte Themes
+## Predefined themes
 
-Alle Themes unterstützen **Auto / Dunkel / Hell** – der Umschalter im HA-Benutzerprofil funktioniert damit wie beim Standard-HA-Theme.
+All themes support **Auto / Dark / Light** – the toggle in the HA user profile works like the standard HA theme.
 
-| Theme | Dark-Stil | Light-Variante |
-|-------|-----------|----------------|
+| Theme | Dark style | Light variant |
+|-------|------------|----------------|
 | Modern Dark | Google Material Dark | Material Light |
-| Dracula | Klassisches Dracula | Dracula Hell |
-| Catppuccin Mocha | Catppuccin Mocha | Catppuccin Latte (offiziell) |
-| Solarized Dark | Solarized Dark | Solarized Light (offiziell) |
+| Dracula | Classic Dracula | Dracula Hell |
+| Catppuccin Mocha | Catppuccin Mocha | Catppuccin Latte (official) |
+| Solarized Dark | Solarized Dark | Solarized Light (official) |
 | GitHub Dark | GitHub Dark | GitHub Light |
 | Nord | Nord Polarnight | Nord Snowstorm |
 | Monokai | Monokai Dark | Monokai Hell |
-| Oceanic Dark | Ozean Dunkel | Ozean Türkis |
-| HA HomeDashboard | Minimalistisch, transparente Karten (erfordert Card-Mod) | – |
-| Glass | Halbtransparente Karten, Blur-Effekt, großer Radius ¹ | Frosted-Glass hell |
-| Sharp | Geradlinig, 0 px Radius, klares Flat-Design | Sauberes Weiß/Grau |
-| Aurora | Radial-Gradient dunkelblau → waldgrün (oben rechts), Nordlichter-Optik ¹ | Blau → Mintgrün (hell) |
-| Horizon | Linearer Gradient dunkelblau → warm-orange (Sonnenuntergang, oben→unten) ¹ | Himmelblau → Pfirsich (hell) |
-| Mono | Monospace-Schrift, Terminal-Grün auf Schwarz ² | Terminal-Grün auf Weiß |
-| Rounded | Gerundete Schrift (`ui-rounded`), sehr große Kartenradien ² | Luftig, Pastellrosé |
+| Oceanic Dark | Ocean Dark | Ocean Turquoise |
+| HA HomeDashboard | Minimal, transparent cards (requires Card Mod) | – |
+| Glass | Semi-transparent cards, blur effect, large radius ¹ | Frosted-glass light |
+| Sharp | Straight lines, 0 px radius, clean flat design |
+| Clean white/gray |
+| Aurora | Radial gradient dark blue → forest green (top right), northern lights look ¹ | Blue → mint green (light) |
+| Horizon | Linear gradient dark blue → warm orange (sunset, top→bottom) ¹ | Sky blue → peach (light) |
+| Mono | Monospace font, terminal green on black ² | Terminal green on white |
+| Rounded | Rounded font (`ui-rounded`), very large card radii ² | Airy, pastel rose |
 
-> ¹ **Blur-Effekt** benötigt die [Card-Mod](https://github.com/thomasloven/lovelace-card-mod) Custom Component. Gradient und Farben funktionieren auch ohne Card-Mod.
-> ² **Font-Themes** wenden die Schriftart via Card-Mod breit an. Ohne Card-Mod gilt nur `mdc-typography-font-family` (Material-Elemente).
+> ¹ **Blur effect** requires the [Card Mod](https://github.com/thomasloven/lovelace-card-mod) custom component. Gradient and colors work without Card Mod.
+> ² **Font themes** apply the font broadly via Card Mod. Without Card Mod only `mdc-typography-font-family` is applied (Material elements).
 
 ---
 
-## Eigene Themes hinzufügen
+## Add your own themes
 
-Ein Preset aus `/config/themes/` kopieren, umbenennen (z.B. `mein_theme.yaml`) und nach Belieben anpassen. Die Datei wird beim nächsten Start nicht überschrieben – nur die Preset-Dateien werden aktualisiert. Danach einmal **Dienste → `frontend.reload_themes`** aufrufen und das Theme erscheint sofort im Profil.
+Copy a preset from `/config/themes/`, rename it (for example `my_theme.yaml`), and customize it as desired. The file will not be overwritten on the next restart – only preset files are updated. Then call **Services → `frontend.reload_themes`** once and the theme appears immediately in the profile.
 
-Das Format für Dark- und Light-Unterstützung:
+The format for dark and light support:
 
 ```yaml
-Mein Theme:
-  # Strukturelle Werte (gelten für beide Modi)
+My Theme:
+  # Structural values (apply to both modes)
   ha-card-border-radius: "12px"
   ha-card-border-width: "0px"
 
@@ -124,7 +126,7 @@ Mein Theme:
 
 ---
 
-## `/config/themes/` nach Installation
+## `/config/themes/` after installation
 
 ```
 /config/themes/
@@ -145,87 +147,87 @@ Mein Theme:
 └── rounded.yaml
 ```
 
-> Preset-Dateien werden bei jedem Start neu geschrieben (immer aktuell). Eigene `.yaml`-Dateien im Ordner bleiben unangetastet.
+> Preset files are rewritten on every startup (always up to date). Custom `.yaml` files in the folder remain untouched.
 
 ---
 
-## Unterstützte CSS-Variablen
+## Supported CSS variables
 
-Alle Preset-Themes setzen folgende HA-Variablen:
+All preset themes set the following HA variables:
 
-### Farben & Hintergründe
-| Variable | Beschreibung |
+### Colors & backgrounds
+| Variable | Description |
 |----------|-------------|
-| `primary-color` | Hauptfarbe (Buttons, Links, Highlights) |
-| `accent-color` | Akzentfarbe |
-| `primary-background-color` | Seiten-Hintergrund |
-| `secondary-background-color` | Sekundärer Hintergrund |
+| `primary-color` | Primary color (buttons, links, highlights) |
+| `accent-color` | Accent color |
+| `primary-background-color` | Page background |
+| `secondary-background-color` | Secondary background |
 
-### Karten
-| Variable | Beschreibung |
+### Cards
+| Variable | Description |
 |----------|-------------|
-| `card-background-color` | Card-Hintergrund |
-| `ha-card-background` | Card-Hintergrund (neuere HA-Versionen) |
-| `ha-card-border-width` | Card-Rahmenbreite |
-| `ha-card-border-radius` | Card-Eckenradius |
+| `card-background-color` | Card background |
+| `ha-card-background` | Card background (newer HA versions) |
+| `ha-card-border-width` | Card border width |
+| `ha-card-border-radius` | Card border radius |
 
 ### Text
-| Variable | Beschreibung |
+| Variable | Description |
 |----------|-------------|
-| `primary-text-color` | Haupttext |
-| `secondary-text-color` | Untergeordneter Text |
-| `disabled-text-color` | Deaktivierter Text |
+| `primary-text-color` | Primary text |
+| `secondary-text-color` | Secondary text |
+| `disabled-text-color` | Disabled text |
 
-### App-Header & Sidebar
-| Variable | Beschreibung |
+### App header & sidebar
+| Variable | Description |
 |----------|-------------|
-| `app-header-background-color` | Topbar-Hintergrund |
-| `app-header-text-color` | Topbar-Text |
-| `sidebar-background-color` | Sidebar-Hintergrund |
-| `sidebar-icon-color` | Sidebar-Icons |
-| `sidebar-selected-icon-color` | Aktiver Eintrag – Icon |
+| `app-header-background-color` | Top bar background |
+| `app-header-text-color` | Top bar text |
+| `sidebar-background-color` | Sidebar background |
+| `sidebar-icon-color` | Sidebar icons |
+| `sidebar-selected-icon-color` | Active entry – icon |
 
-### Status & Icons
-| Variable | Beschreibung |
+### Status & icons
+| Variable | Description |
 |----------|-------------|
-| `state-icon-color` | Standard-Icon-Farbe |
-| `error-color` | Fehlerfarbe |
-| `success-color` | Erfolgsfarbe |
-| `warning-color` | Warnfarbe |
+| `state-icon-color` | Default icon color |
+| `error-color` | Error color |
+| `success-color` | Success color |
+| `warning-color` | Warning color |
 
 ---
 
-## Service-Calls
+## Service calls
 
-### Themes neu laden (nach eigenen YAML-Änderungen)
+### Reload themes (after custom YAML changes)
 ```yaml
 service: theme_manager.reload_themes
 ```
 
-### Globales Standard-Theme setzen
+### Set a global default theme
 ```yaml
 service: theme_manager.apply_theme
 data:
   theme_name: "Dracula"
 ```
 
-### Verfügbare Themes ins Log schreiben
+### Log available themes
 ```yaml
 service: theme_manager.list_themes
 ```
 
 ---
 
-## Projektstruktur
+## Project structure
 
 ```
 custom_components/theme_manager/
-├── __init__.py          # Integration-Setup, Theme-Dateien schreiben
-├── manifest.json        # Metadaten
-├── config_flow.py       # Einmalige Einrichtung
-├── const.py             # Preset-Definitionen & Custom-Template
-├── services.py          # Service-Handler
-├── services.yaml        # Service-Beschreibungen für HA
+├── __init__.py          # integration setup, writes theme files
+├── manifest.json        # metadata
+├── config_flow.py       # one-time setup
+├── const.py             # preset definitions & custom template
+├── services.py          # service handlers
+├── services.yaml        # HA service descriptions
 └── translations/
     ├── de.json
     └── en.json
@@ -233,13 +235,12 @@ custom_components/theme_manager/
 
 ---
 
-## Geplante Erweiterungen
+## Planned enhancements
 
-- Weitere Themes (Light-Mode-Varianten, High-Contrast)
-- Mehr CSS-Variablen (Klima-Karten, Energie-Dashboard, Map-Card)
-- Automatischer Dark/Light-Wechsel per Zeitplan
+- More themes (light-mode variants, high contrast)
+- More CSS variables (climate cards, energy dashboard, map card)
 
 ---
 
-MIT License – erstellt von [jayjojayson](https://github.com/jayjojayson)
+MIT License – created by [jayjojayson](https://github.com/jayjojayson)
 
