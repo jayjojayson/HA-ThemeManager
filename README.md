@@ -1,9 +1,9 @@
 # Theme Manager für Home Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
-[![Validate with hassfest](https://github.com/jayjojayson/HA-theme-manager/actions/workflows/hassfest.yaml/badge.svg)](https://github.com/jayjojayson/HA-theme-manager/actions/workflows/hassfest.yaml)
-[![Validate with HACS](https://github.com/jayjojayson/HA-theme-manager/actions/workflows/validate.yaml/badge.svg)](https://github.com/jayjojayson/HA-theme-manager/actions/workflows/validate.yaml)
-[![GitHub Release](https://img.shields.io/github/release/jayjojayson/HA-theme-manager.svg?style=flat-square)](https://github.com/jayjojayson/HA-theme-manager/releases)
+[![Validate with hassfest](https://github.com/jayjojayson/HA-ThemeManager/actions/workflows/hassfest.yaml/badge.svg)](https://github.com/jayjojayson/HA-ThemeManager/actions/workflows/hassfest.yaml)
+[![Validate with HACS](https://github.com/jayjojayson/HA-ThemeManager/actions/workflows/validate.yaml/badge.svg)](https://github.com/jayjojayson/HA-ThemeManager/actions/workflows/validate.yaml)
+[![GitHub Release](https://img.shields.io/github/release/jayjojayson/HA-ThemeManager.svg?style=flat-square)](https://github.com/jayjojayson/HA-ThemeManager/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/jayjojayson/HA-theme-manager?style=flat-square)](https://github.com/jayjojayson/HA-theme-manager/stargazers)
 
@@ -242,3 +242,4 @@ custom_components/theme_manager/
 ---
 
 MIT License – erstellt von [jayjojayson](https://github.com/jayjojayson)
+
